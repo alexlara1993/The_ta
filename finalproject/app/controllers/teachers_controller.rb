@@ -8,7 +8,12 @@ class TeachersController < ApplicationController
 
   def create
      @teacher = Teacher.create(teacher_params)
-     redirect_to teacher_path(@teacher.id)
+     if @teacher.save
+        flash[:success] = "Welcome to the Sample App!"
+        redirect_to login_path
+        # redirect_to teacher_path(@teacher.id)
+     else render 'new'
+     end
   end
 
   def show

@@ -1,17 +1,19 @@
 
-<h1>Teacher#new</h1>
+<h1>Teacher Sign up </h1>
       <p>Find me in app/views/teachers/new.html.erb</p>
 
-      <%= form_for @teacher do |f| %>
-          <div>
-          <%= f.text_field :email %>
-          </div>
-          <div>
-            <%= f.text_field :password %>
-          </div>
+		<%= form_for @teacher do |f| %>
+			<div>
+			<%= f.label :email %>
+			<%= f.text_field :email %>
+			</div>
+			<div>
+				<%= f.label :password %>
+				<%= f.password_field :password %>
+			</div>
           
-          <div>
-            <%= f.submit %>
-          </div>
-      <% end %>
+			<div>
+				<%= f.submit %>
+			</div>
+		<% end %>
 
