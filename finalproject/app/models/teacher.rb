@@ -1,5 +1,8 @@
 require 'bcrypt'
 class Teacher < ActiveRecord::Base
+  has_many :class_rooms
+  has_many :students, through: :class_rooms
+
   BCrypt::Engine.cost = 12
 
   attr_reader :password

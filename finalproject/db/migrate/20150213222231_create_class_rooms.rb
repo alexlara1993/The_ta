@@ -1,11 +1,12 @@
 class CreateClassRooms < ActiveRecord::Migration
   def change
-    create_table :class_rooms do |t|
-      t.string :name
-      t.integer :teacher_id
-      t.integer :student_id
+   create_table :class_rooms do |t|
+   	t.string :name
+   	t.timestamps null: false
 
-      t.timestamps null: false
-    end
+   	t.references :student
+   	t.references :teacher
+   end
   end
+
 end
