@@ -4,5 +4,13 @@
   <strong>Name:</strong>
   <%= @class_room.name %>
 </p>
+
+<div id="students_wrapper">
+	<%= render @class_room.students %>
+ <div id="form">
+	<%= render "students/form" %>
+ </div>
+</div>
+
 <%= link_to 'Edit', edit_class_room_path(@class_room) %> |
 <%= link_to 'Back', class_rooms_path %>

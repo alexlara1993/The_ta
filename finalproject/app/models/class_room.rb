@@ -1,4 +1,5 @@
 class ClassRoom < ActiveRecord::Base
-	belongs_to :teacher
-	belongs_to :student
+	has_many :students
+	# belongs_to :teacher
+	# belongs_to :student
 end
