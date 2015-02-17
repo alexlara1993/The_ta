@@ -1,5 +1,5 @@
 <%= form_for([@class_room, @class_room.students.build]) do |f| %>
-  <%= f.text_field :first_name, placeholder: "first_name" %>
-  <%= f.text_field :last_name, placeholder: "last_name" %>
+  <%= f.text_field :first_name, placeholder: "First name" %>
+  <%= f.text_field :last_name, placeholder: "Last name" %>
   <%= f.submit %>
   <% end %>
