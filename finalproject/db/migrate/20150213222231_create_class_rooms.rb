@@ -4,8 +4,8 @@ class CreateClassRooms < ActiveRecord::Migration
    	t.string :name
    	t.timestamps null: false
 
-   	t.references :student
-   	t.references :teacher
+   	# t.references :student
+   	# t.references :teacher
    end
   end
 
