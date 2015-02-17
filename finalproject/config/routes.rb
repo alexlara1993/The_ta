@@ -20,7 +20,12 @@ get "/login", to: "sessions#new"
 post "/sessions", to: "sessions#create"
 
 get "/sign_up", to: "teachers#new", as: "sign_up"
-resources :teachers
+ resources :teachers do 
+    resources :class_rooms
+  end
+
+
+
 resources :sessions
 	resources :class_rooms do
 		resources :students
@@ -29,7 +34,7 @@ resources :sessions
 
 
 end
-#                  Prefix Verb   URI Pattern                                             Controller#Action
+    # Prefix Verb   URI Pattern                                             Controller#Action
 #       class_rooms_index GET    /class_rooms/index(.:format)                            class_rooms#index
 #        class_rooms_show GET    /class_rooms/show(.:format)                             class_rooms#show
 #         class_rooms_new GET    /class_rooms/new(.:format)                              class_rooms#new
@@ -41,6 +46,14 @@ end
 #                   login GET    /login(.:format)                                        sessions#new
 #                sessions POST   /sessions(.:format)                                     sessions#create
 #                 sign_up GET    /sign_up(.:format)                                      teachers#new
+#     teacher_class_rooms GET    /teachers/:teacher_id/class_rooms(.:format)             class_rooms#index
+#                         POST   /teachers/:teacher_id/class_rooms(.:format)             class_rooms#create
+#  new_teacher_class_room GET    /teachers/:teacher_id/class_rooms/new(.:format)         class_rooms#new
+# edit_teacher_class_room GET    /teachers/:teacher_id/class_rooms/:id/edit(.:format)    class_rooms#edit
+#      teacher_class_room GET    /teachers/:teacher_id/class_rooms/:id(.:format)         class_rooms#show
+#                         PATCH  /teachers/:teacher_id/class_rooms/:id(.:format)         class_rooms#update
+#                         PUT    /teachers/:teacher_id/class_rooms/:id(.:format)         class_rooms#update
+#                         DELETE /teachers/:teacher_id/class_rooms/:id(.:format)         class_rooms#destroy
 #                teachers GET    /teachers(.:format)                                     teachers#index
 #                         POST   /teachers(.:format)                                     teachers#create
 #             new_teacher GET    /teachers/new(.:format)                                 teachers#new
