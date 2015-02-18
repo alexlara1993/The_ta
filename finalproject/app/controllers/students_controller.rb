@@ -7,10 +7,19 @@ class StudentsController < ApplicationController
     redirect_to @class_room
   end
 
+  def vote
+    value = params[:type] == "up" ? 1 : -1
+    @student = Student.find(params[:id])
+    @student.add_or_update_evaluation(:votes, value, @student)
+    redirect_to :back, notice: "point added"
+  end
+
   private
 
   def set_class_room
-    @class_room = ClassRoom.find(params[:class_room_id])
+    if params[:class_room_id]
+      @class_room = ClassRoom.find(params[:class_room_id])
+    end
   end
 
   def student_params

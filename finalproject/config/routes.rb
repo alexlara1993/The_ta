@@ -30,8 +30,9 @@ resources :sessions
 	resources :class_rooms do
 		resources :students
 	end
-
-
+ resources :students do 
+      member { post :vote}
+    end
 
 end
     # Prefix Verb   URI Pattern                                             Controller#Action
