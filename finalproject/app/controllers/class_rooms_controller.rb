@@ -56,7 +56,7 @@ before_action :set_class_room, only: [:show, :edit, :update, :destroy]
   def destroy
     @class_room.destroy
     respond_to do |format|
-      format.html { redirect_to create_classes_url, notice: 'Create class was successfully destroyed.' }
+      format.html { redirect_to class_rooms_path, notice: 'Class was successfully destroy.' }
       format.json { head :no_content }
     end
   end
