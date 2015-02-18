@@ -42,7 +42,7 @@ before_action :set_class_room, only: [:show, :edit, :update, :destroy]
   def update
     respond_to do |format|
       if @class_room.update(class_room_params)
-        format.html { redirect_to @class_room, notice: 'Create class was successfully updated.' }
+        format.html { redirect_to @class_room, notice: 'Class was successfully updated.' }
         format.json { render :show, status: :ok, location: @class_room }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ before_action :set_class_room, only: [:show, :edit, :update, :destroy]
   def destroy
     @class_room.destroy
     respond_to do |format|
-      format.html { redirect_to create_classes_url, notice: 'Create class was successfully destroyed.' }
+      format.html { redirect_to @class_room, notice: 'Create class was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
