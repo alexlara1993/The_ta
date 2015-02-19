@@ -1,6 +1,9 @@
 class StudentsController < ApplicationController
 	before_action :set_class_room
 
+  def index
+  @students = Student.find_with_reputation(:votes, :all, order: "votes desc")
+  end
 
   def create
     @student = @class_room.students.create(student_params)
