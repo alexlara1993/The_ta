@@ -20,8 +20,6 @@ ActiveRecord::Schema.define(version: 20150218051812) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "student_id"
-    t.integer  "teacher_id"
   end
 
   create_table "rs_evaluations", force: :cascade do |t|
@@ -73,10 +71,12 @@ ActiveRecord::Schema.define(version: 20150218051812) do
   create_table "students", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
+    t.integer  "class_room_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.integer  "class_room_id"
   end
+
+  add_index "students", ["class_room_id"], name: "index_students_on_class_room_id", using: :btree
 
   create_table "teachers", force: :cascade do |t|
     t.string   "email"

@@ -7,6 +7,6 @@ class CreateStudents < ActiveRecord::Migration
       t.timestamps null: false
       
     end
-    add_foreign_key :students, :class_rooms
+    # add_foreign_key :students, :class_rooms
   end
 end
