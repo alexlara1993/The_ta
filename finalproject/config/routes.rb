@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   get 'class_rooms/index'
 
   get 'class_rooms/show'
